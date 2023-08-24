@@ -1,0 +1,66 @@
+<body>
+	<!-- ======= Header ======= -->
+	<header id="header" class="fixed-top">
+		<div class="container d-flex align-items-center">
+			<a href="https://www.eni.com/en-IT/home.html" class="logo me-auto"
+				><img src="/assets/eniLogo.svg" alt="ENI-logo"
+			/></a>
+			<nav id="navbar" class="nav navbar navbar-not-trans nav-menu navbar-trans d-none d-lg-block">
+				<ul>
+					<li class="<%=path === '/' ? 'active': ''%>">
+						<a href="/">Home</a>
+					</li>
+					<div class="dropdown">
+						<li class="<%=(path === '/sust-dev' || path === '/about-us') ? 'active': ''%>">
+							<button class="dropbtn">
+								About <span><i class="bx bx-chevron-right"></i></span>
+							</button>
+						</li>
+						<div class="dropdown-content pt-4">
+							<div class="drop-content-container">
+								<li class="<%=path === '/about-us' ? 'active': ''%>">
+									<a href="/about-us" class="drop-anchor"><span class="nav-underline me-2"></span>Who We Are</a>
+								</li>
+								<li class="<%=path === '/sust-dev' ? 'active': ''%>">
+									<a href="/sust-dev" class="drop-anchor"
+										><span class="nav-underline me-2"></span>Sustainable Development</a
+									>
+								</li>
+							</div>
+						</div>
+					</div>
+					<li class="<%=path === '/contact' ? 'active': ''%>">
+						<a href="/contact">Contacts</a>
+					</li>
+					<!-- <li class="<%=path === '/resources' ? 'active': ''%>">
+						<a href="/resources">Resources</a>
+					</li> -->
+					<% if(isAuthenticated) { %>
+					<li class="<%=path === '/admin/projects' ? 'active': ''%>">
+						<a href="/admin/projects">Admin Projects</a>
+					</li>
+					<li class="<%=path === '/admin/edit-project' ? 'active': ''%>">
+						<a href="/admin/add-project">Add Project</a>
+					</li>
+					<% } %>
+					<!-- <li class="<%=path === '/login' ? 'active': ''%>"><a href="/login">Login</a></li> -->
+					<% if(isAuthenticated ) { %>
+					<li>
+						<form action="/logout" method="POST">
+							<input type="hidden" name="_csrf" value="<%=csrfToken%>" />
+							<button type="submit" class="logout-btn">Logout</button>
+						</form>
+					</li>
+					<!-- <li class="<%=path === '/signup' ? 'active': ''%>"><a href="/signup">Sign Up</a> </li>-->
+
+					<li class="<%=path === '/reset' ? 'active': ''%>">
+						<a href="/reset">Reset Password</a>
+					</li>
+					<% } %>
+				</ul>
+			</nav>
+			<!-- .nav-menu -->
+		</div>
+	</header>
+	<!-- End Header -->
+</body>

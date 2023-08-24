@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+#  Hero Section
+--------------------------------------------------------------*/
+
+.sust-section {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.034), rgba(0, 0, 0, 0.815)),
+		url(../assets/1fc28829-52ca-4926-a7f8-9e3a90cd17eb.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+	color: white;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	overflow: hidden;
+}
+
+.split-box-content {
+	position: relative;
+	padding: 10% 0 0 !important;
+	/* text-align: center; */
+	z-index: 9;
+}
+/*-----------------------------------------------------*/
+/* .perimary-btn {
+	width: 240px;
+} */

@@ -1,0 +1,42 @@
+<%-include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/admin-projects.css">
+    </head>
+    <%-include('../includes/navigation.ejs')%>
+    <div style="margin-top:120px;"></div>
+    <div class="text-center">
+        <h2 class=" mb-5 main-heading  d-inline-block ">Admin Projects</h2>
+        </div>
+        <div class="card-group d-flex wrap ">
+                    <%if(projs.length> 0) { %>
+                    <% for(project of projs) { %>
+            <article class="me-5">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=project.title%></h5>
+                        <a href="/admin/edit-project/<%=project._id%>?edit=true" class="btn btn-warning">Edit</a>
+                        <input type="hidden" name="projectId" value="<%=project._id%>">
+                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        <button type="button" class="delete-btn btn btn-warning">Delete</button>
+                    </div>
+                </div>
+            </article>
+            <% } } else{ %>
+                <h1>No Projects yet...</h1>
+                <% } %>
+        </div>
+
+                <article>
+                    <h1>
+                        
+                    </h1>
+
+                    
+                        
+                </article>
+                
+                <%-include('../includes/end.ejs') %>
+                <script src="/js/non-home.js"></script>
+                <script src="/js/admin.js"></script>

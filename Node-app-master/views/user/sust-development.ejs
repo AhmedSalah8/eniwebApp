@@ -1,0 +1,174 @@
+<%-include('../includes/head.ejs')%>
+<!-- leaflet map link-->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+			integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+			crossorigin=""
+		/>
+<link rel="stylesheet" href="/css/sust-development.css">
+<link rel="stylesheet" href="/css/map.css">
+
+    </head>
+<%-include('../includes/navigation.ejs')%>
+        <section id="about-me-section" class="mt-5 sust-section">
+			<!-- <picture>
+                            <img src="/assets/img/img/p4.jpg" alt="">
+                        </picture> -->
+			<div class="split-box about-me container">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="content">
+							<!-- Begin split box content 
+                                ============================= 
+                                * Use class "shifted-left" or "shifted-right" to enable shifted content (do not use for long content).
+                                -->
+							<div class="split-box-content text-center ">
+								<h1 class="about-me-title font-size-40 ">
+									SUSTAINABILITY AND LOCAL DEVELOPMENT
+								</h1>
+								<!-- <div class="about-me-sub">Lawyer &amp; Fashion Model</div> -->
+
+								<div class="about-me-text bold-white-text">
+									<p>
+										Since 1954 the presence of Eni in Egypt has been guided by the idea of
+										supporting the country toward energy independence and human
+										development. With the type of agreements introduced by the “Mattei
+										formula”, Egypt has obtained direct participation to its natural
+										resources. Equal ownership and community development have always been
+										at the core of Eni’s strategy in the country. Today, Eni is a major
+										agent of development, contributing to Egypt Vision 2030 and the 17 UN
+										SDGs.
+									</p>
+								</div>
+							</div>
+							<!-- End split box content -->
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- End split box -->
+		</section >
+		<!-- End Sustainable Development section -->
+       
+        <section class="map-container">
+          <div id="map" class="right-container myMap justify-content-between">
+          </div> 
+		  <div class="articles-container">
+
+				<% for(project of projs) {%>
+					<% if(project.category == 'Port Said') {%>
+						<div class="article hidden portsaid">
+							<h2><%=project.category%></h2>
+							<span class="close"></span>
+							<span class="projectSubtitle">Project Name</span>
+							<h3 class="projectName" ><%=project.title%></h3>
+							<span class="projectSubtitle">Project Area</span>
+                			<h5 class="projectArea"> <%=project.area%></h5>
+							<p class="projectDetails"><%=project.description%></p>
+				<hr>
+                <div class="projectImg ">
+          
+                  <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                </div>
+				<div class="next-container ">
+					<button class="perimary-btn port mt-4 me-2">Next</button>
+					<span class="ms-5 portsaid-count">1/</span>
+				</div>
+			</div>
+			<% } }%>
+					
+				<% for(project of projs) {%>
+					<% if(project.category == 'Damietta') {%>
+						<div class="article hidden damietta">
+							<h2><%=project.category%></h2>
+							<span class="close"></span>
+							<span class="projectSubtitle">Project Name</span>
+							<h3 class="projectName" ><%=project.title%></h3>
+							<span class="projectSubtitle">Project Area</span>
+                			<h5 class="projectArea"> <%=project.area%></h5>
+							<p class="projectDetails"><%=project.description%></p>
+				<hr>
+                <div class="projectImg ">
+          
+                  <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                </div>
+				<button class="perimary-btn dami mt-4 me-2">Next</button>
+				<span class="ms-5 damietta-count">1/</span>
+						</div>
+					<% } }%>
+				<% for(project of projs) {%>
+					<% if(project.category == 'Cairo') {%>
+						<div class="article hidden cairo">
+							<h2><%=project.category%></h2>
+							<span class="close"></span>
+							<span class="projectSubtitle">Project Name</span>
+							<h3 class="projectName" ><%=project.title%></h3>
+							<span class="projectSubtitle">Project Area</span>
+                			<h5 class="projectArea"> <%=project.area%></h5>
+							<p class="projectDetails"><%=project.description%></p>
+				<hr>
+                <div class="projectImg ">
+          
+                  <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                </div>
+				<button class="perimary-btn cai mt-4 me-2">Next</button>
+				<span class="ms-5 cairo-count">1/</span>
+						</div>
+					<% } }%>
+				<% for(project of projs) {%>
+					<% if(project.category == 'Western Desert') {%>
+						<div class="article hidden desert">
+							<h2><%=project.category%></h2>
+							<span class="close"></span>
+							<span class="projectSubtitle">Project Name</span>
+							<h3 class="projectName" ><%=project.title%></h3>
+							<span class="projectSubtitle">Project Area</span>
+                			<h5 class="projectArea"> <%=project.area%></h5>
+							<p class="projectDetails"><%=project.description%></p>
+				<hr>
+                <div class="projectImg ">
+          
+                  <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                </div>
+				<button class="perimary-btn des mt-4 me-2">Next</button>
+				<span class="ms-5 desert-count">1/</span>
+						</div>
+					<% } }%>
+				<% for(project of projs) {%>
+					<% if(project.category == 'South Sinai') {%>
+						<div class="article hidden sinai">
+							<h2><%=project.category%></h2>
+							<span class="close"></span>
+							<span class="projectSubtitle">Project Name</span>
+							<h3 class="projectName" ><%=project.title%></h3>
+							<span class="projectSubtitle">Project Area</span>
+                			<h5 class="projectArea"> <%=project.area%></h5>
+							<p class="projectDetails"><%=project.description%></p>
+				<hr>
+                <div class="projectImg ">
+          
+                  <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                </div>
+				<button class="perimary-btn sina mt-4 me-2">Next</button>
+				<span class="ms-5 sinai-count">1/</span>
+						</div>
+					<% } }%>
+             
+		  </div>
+
+        </section>
+
+
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+      ></script>
+      <script src="/js/map.js"></script>
+        <%-include('../includes/end.ejs') %>
+        <script src="/js/non-home.js"></script>
+        	<!-- leaflet map link-->

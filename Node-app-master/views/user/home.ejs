@@ -1,0 +1,449 @@
+<%-include('../includes/head.ejs')%>
+   
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/home.css">
+    </head>
+<%-include('../includes/navigation.ejs')%>
+        <!-- ======= Hero Section ======= -->
+        <section id="hero" class="d-flex align-items-center ps-2">
+            <div class="container " data-aos="zoom-out" data-aos-delay="100">
+                <h1><span>ENI </span>in Egypt
+                </h1>
+                <h2>Promoting a Sustainable Development</h2>
+                <div class="d-flex">
+                    <a href="#sust-dev-section" class="btn-get-started scrollto">Learn More</a>
+                    <a href="https://www.youtube.com/watch?v=SqU29tCCXxc&t=5s" class="venobox btn-watch-video" data-vbtype="video"
+                        data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a>
+                </div>
+            </div>
+        </section><!-- End Hero -->
+
+<main id="main" data-aos="fade-right">
+<section >
+    <div class="container ps-2" >
+        <h2 class="news-main--header">News</h2>
+        <p>keep up with our sustainability and local development in Egypt.</p>
+    </div>
+    <div class="position-relative px-2">
+        <div class="container swiper mySwiper " >
+            <div class=" content swiper-wrapper">
+                <%if(projs.length> 0) { %>
+                    <% for(project of projs) { %>
+                    <% if (project.category == 'sustainability') { %>
+                <div class="card swiper-slide">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                        </div>
+    
+                        <div class="project-info">
+                            <span class="name"><%=project.title%></span>
+                            <span class="project-date" ><%=new Date (project.createdAt).toDateString()%></span>
+                            <br />
+                            <span class="project-desc"><%=project.description%></span>
+                        </div>
+    
+    
+                        <div class="button">
+                            <a href="/project/<%=project._id%>" class="btn-text">Learn More <span>&rarr;</span></a>
+
+                        </div>
+                    </div>
+                </div>
+                <% } } } else{ %>
+                    <h1>No Projects yet...</h1>
+                    <% } %>
+                        
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+</section>
+
+<!-- Sustainability Development Section -->
+            <section id="sust-dev-section" class="m-0 sust-section">
+			<div class="split-box about-me container mt-5">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="" data-aos="fade-down" data-aos-delay="100">
+							<!-- Begin split box content  =============================       -->
+							<div class="split-box-content text-center">
+								<h1 class="about-me-title font-size-40 mt-5">
+									SUSTAINABILITY AND LOCAL DEVELOPMENT
+								</h1>
+								<div class="about-me-text bold-white-text">
+									<p>
+										Since 1954 the presence of Eni in Egypt has been guided by the idea of
+										supporting the country toward energy independence and human
+										development. With the type of agreements introduced by the “Mattei
+										formula”...
+									</p>
+									<a href="/sust-dev" class="perimary-btn scrollto mt-5">Continue Reading..</a>
+								</div>
+							</div>
+							<!-- End split box content -->
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- End split box -->
+		    </section>
+            <!-- END Of Sustainability development section -->
+    
+
+
+<section >
+    <div class="container ps-2" >
+        <h2 class="news-main--header"> Articles</h2>
+        <p>Our Achievements and Activities in Egypt.</p>
+    </div>
+    <div class="position-relative px-2">
+        <div class="container swiper mySwiper " >
+            <div class=" content swiper-wrapper">
+                <%if(projs.length> 0) { %>
+                    <% for(project of projs) { %>
+                    <% if(project.category == 'business') { %>
+                <div class="card swiper-slide">
+                    <div class="card-content">
+                        <div class="card-image">
+                            <img src="/<%=project.imageUrl%>" alt="<%=project.title%>">
+                        </div>
+    
+                        <div class="project-info">
+                            <span class="name"><%=project.title%></span>
+                            <span class="project-date" ><%=new Date (project.createdAt).toDateString()%></span>
+                            <br />
+                            <span class="project-desc"><%=project.description%></span>
+                        </div>
+    
+    
+                        <div class="button">
+                            <a href="/project/<%=project._id%>" class="btn-text">Learn More <span>&rarr;</span></a>
+
+                        </div>
+                    </div>
+                </div>
+                <% } } } else{ %>
+                    <h1>No Projects yet...</h1>
+                    <% } %>
+                        
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+</section>
+
+
+            <!-- ======= About Section ======= -->
+<section class="section-about m-auto">
+    <div class="container">
+        <!-- <div class="section-title ">
+            <h2>About us</h2>
+        </div> -->
+        <div class="section-title-2 " data-aos="fade-right" data-aos-delay="100">
+            <h3>What is <span class="yellow-color">ENI</span> </h3>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="about-section pl">
+            <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-start eni-about-description"
+                data-aos="fade-up" data-aos-delay="100">
+                <p class="letter-spacing mt-3">
+                    <span class="black-color">Eni</span> is a global energy company present in 68 Countries with over
+                    30,000
+                    people, operating along the entire value chain.
+                </p>
+                <p class="font-italic letter-spacing">
+                    <span class="black-color">The company's Mission</span>
+                    clearly expresses the commitment of Eni to play a decisive role in the just transition for a
+                    low-carbon future
+                    that guarantees efficient and sustainable access to energy for all in order to contribute to the
+                    achievement
+                    of the Sustainable Development Goals (SDGs).
+                </p>
+            </div>
+            <div class=" mt-3  pt-4 pt-lg-0 content d-flex flex-column margin-bottom
+                justify-content-start eni-about-description" data-aos="fade-up" data-aos-delay="100">
+
+                <p class="letter-spacing">
+                    <span class="black-color">This commitment</span>
+                    is confirmed by
+                    the transformation path that Eni has been
+                    pursuing for some years, and which saw in
+                    2020 an acceleration.
+                </p>
+                <p class="letter-spacing">
+                    <span class="black-color">In fact</span>
+                    , in February
+                    2021, was announced the commitment
+                    to achieve net zero emissions by 2050,
+                    through the full decarbonisation of
+                    products and processes.
+
+                </p>
+                <div class="mt-4 mb-2">
+
+                    <a href="/about-us" class="perimary-btn scrollto">Find out More!</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-------- End About Section ------------>
+
+            <!-- ======= Egypt at Glance Section ======= -->
+            <section class="egypt-glance ">
+                <div class=" container">
+                    <h3 class="egypt-glance-header">ENI Egypt at a Glance</h3>
+                </div>
+                <div class=" gridContainer justify-content-between egypt-glance-container container" >
+                    <div class="left-container" data-aos="fade-right" data-aos-delay="100">
+                        <h4 class="dark-yellow-text">1<sup>ST</sup></h4>
+                        <p>ENERGY COMPANY IN THE COUNTRY</p>
+                        <h4 class="dark-yellow-text">67</h4>
+                        <p>YEARS OF PRESENCE IN THE COUNTRY</p>
+                        <h4 class="dark-yellow-text">1<sup>ST</sup></h4>
+                        <p>COUNTRY IN ENI’S PORTFOLIO</p>
+                        <h4 class="dark-yellow-text">900</h4>
+                        <p>KBOED OIL & GAS GROSS PRODUCTION</p>
+                        <h4 class="dark-yellow-text">44</h4>
+                        <p>LNG CARGOS FROM DAMIETTA PLANT IN <br>
+                            2021</p>
+                        <h4 class="dark-yellow-text">40%</h4>
+                        <p>ENI'S CONTRIBUTION TO EGYPT’S <br>
+                            GAS TO POWER GENERATION</p>
+                        <h4 class="dark-yellow-text">650</h4>
+                        <p>GASTEC SERVICE STATIONS
+                            PLANNED BY 2025</p>
+                    </div>
+                    <div class="right-container justify-content-between" data-aos="fade-up" data-aos-delay="100">
+                        <img src="/assets/map2.png" alt="eni-egypt-map" class="img-fluid">
+                    </div>
+                </div>
+            </section>
+            <!-- End Egypt at Glance Section -->
+
+    <!-- =======  long SUCCESSFUL history in egypt Section ======= -->
+    <section id="egypt-history" class="egypt-history">
+        <div class="container history-container " data-aos="fade-right" data-aos-delay="100">
+            <div class="egypt-history-header  pb ps-2">
+                <h3 class="">A LONG SUCCESSFUL <br>
+                    HISTORY IN THE COUNTRY</h3>
+            </div>
+            <div class="egypt-history-container history-1">
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1954</h3>
+                    <p class="max-width ps-2">Eni starts operating in Egypt with the
+                        acquisition of shares of the International
+                        Egyptian Oil Company (IEOC), which will
+                        become fully owned in 1961.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1955</h3>
+                    <p class="max-width ps-2">Belayim onshore field, the first oil discovery
+                        in the Sinai region of Gulf of Suez.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1961</h3>
+                    <p class="max-width ps-2">Belayim Marine offshore oil discovery Gulf
+                        of Suez.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1967</h3>
+                    <p class="max-width ps-2">Abu Madi, first natural gas discovery in Egypt
+                        in the Nile Delta, with reserves of over 80
+                        billion cubic meters.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1978 </h3>
+                    <p class="max-width ps-2">The Compagnie Orientale des Pétroles
+                        d’Egypte (COPE), established for the
+                        exploitation of oil fields in the Sinai, changes
+                        its name to Belayim Petroleum Company
+                        (Petrobel).</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1980 </h3>
+                    <p class="max-width ps-2">Introductions of the “gas clause” in the
+                        Production Sharing Agreements, aimed at
+                        enhancing the exploration and development
+                        of natural gas resources.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1981 - 1987 </h3>
+                    <p class="max-width ps-2">Acquisition of Meleiha Concession in
+                        the Western Desert. Agiba Petroleum
+                        is set up to carry out activities in
+                        the area.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1983 </h3>
+                    <p class="max-width ps-2">Discovery of the Port Fouad gas field offshore
+                        the Nile Delta.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">1996 </h3>
+                    <p class="max-width ps-2">Eni joins Gastec with a 40% share. The company
+                        is set to develop a network of Compressed
+                        Natural Gas (CNG) stations and CNG vehicle
+                        conversion centers.</p>
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">2001 </h3>
+                    <p class="max-width ps-2">Intersinai gas pipeline. The gas from Nile
+                        Delta’s Petrobel fields is delivered to the Sinai
+                        region, thus favoring its growth and further
+                        export to Jordan.</p>
+                </div>
+            </div>
+    
+            <div class="egypt-history-container history-2 toggle-transition">
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2004</h3>
+                    <p class="max-width ps-2">
+                    <ul class="max-width">
+                        <li>
+                            Start-up of Damietta LNG plant, built and run
+                            by SEGAS (Eni 40%).
+                        </li>
+                        <li>
+                            Start-up of a United Gas Derivatives Co.’s plant
+                            (UGDC - Eni 33.3%) in Port Said, for NGL extraction
+                            (LPG, propane and condensates) from rich gas. LPG
+                            and condensates are utilized in the local market.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2015</h3>
+                    <p class="max-width ps-2">Two game-changing gas discoveries: Nooros, in
+                        the Abu Madi West development lease in the Nile
+                        Delta, and Zohr, a world class giant field in the
+                        Shorouk Concession.
+                        Zohr is considered to be the largest discovery in
+                        the Mediterranean.</p>
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2016</h3>
+                    <p class="max-width ps-2">Baltim South West field gas discovery.</p>
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2017</h3>
+                    <ul class="max-width">
+                        <li>November - Gas production record of 1.1
+                            billion cubic feet per day (bcfd) from Nooros.</li>
+                        <li>December – first gas from Zohr.</li>
+                    </ul>
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2018 </h3>
+                    <ul class="max-width">
+                        <li>In September Zohr production reaches
+                            2 bcfd, one year ahead of Plan of
+                            Development (PoD).</li>
+                        <li>Agiba reaches a historic milestone in
+                            Western Desert area: 500 MMbbls of
+                            cumulative oil production.</li>
+                    </ul>
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2019 </h3>
+    
+                    <ul class="max-width">
+                        <li>New Gas discoveries in the East
+                            Mediterranean Offshore (Nour) and in the
+                            Nile Delta Onshore (EL Qara NE).</li>
+                        <li>Baltim SW: first gas achieved in September
+                            2019.</li>
+                    </ul>
+    
+                </div>
+                <div class="egypt-history-info  ">
+                    <h3 class="bg-yellow max-width pl">2020 </h3>
+    
+                    <ul class="max-width">
+                        <li>Two gas discoveries in the Nile Delta
+                            conventional offshore: Bashrush in North
+                            El Hammad Concession and Nidoco NW 1
+                            in the Great Noroos Area.
+                        </li>
+                        <li>Arcadia South oil discovery in the
+                            Western Desert, with a production
+                            contribution of about 10,000 bopd in less
+                            than 3 months.
+                        </li>
+                        <li>First Eni Station for the sale of liquid
+                            fuels and non-fuel products and services
+                            inaugurated in Port Said in cooperation
+                            with Gastec.
+                        </li>
+                    </ul>
+    
+                </div>
+                <div class="egypt-history-info ">
+                    <h3 class="bg-yellow max-width pl">2021 </h3>
+    
+                    <ul class="max-width">
+                        <li>Thanks to the gas discoveries of Zohr
+                            and Nooros, Damietta liquefaction plant
+                            restarted operation (Eni 50%).</li>
+                        <li>IEOC historical production record of 1
+                            million barrel of oil equivalent.</li>
+                    </ul>
+    
+    
+                </div>
+    
+            </div>
+            <div class="history-wrapper me-5 mt-5">
+                <ul class="pagination">
+                    <li class="pagination__item">
+                        <p class="pagination__link is_active ">1</a>
+                    </li>
+                    <li class="pagination__item">
+                        <p class="pagination__link ">2</a>
+                    </li>
+                </ul>
+            </div>
+    
+    </section>
+    
+    <!-- End long SUCCESSFUL history in egypt Section -->
+    <section class="logo-footer">
+          <div class="logo-container ">
+            <div class="logo-section">
+              <div  class="logo-img-container">
+                <div class="logo-img">
+                  <img src="/assets/egypt-vision.png" alt="egypt-vision" >
+                </div>
+                <div class="logo-img">
+                  <img src="/assets/agenda2030.jpg" alt="agenda2030">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+</main>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    
+    <%-include('../includes/end.ejs') %>
+    <script src="/js/home.js"></script>
+    

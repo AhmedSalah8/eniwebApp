@@ -1,0 +1,48 @@
+<%-include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/project-details.css">
+</head>
+<%-include('../includes/navigation.ejs')%>
+        <!-- ======= project details Section ======= -->
+    <main id="main">
+
+        <!-- ======= project details Section ======= -->
+
+        <!-- ======= who we are Section ======= -->
+        <section class=" main-heading section-bg-wheat">
+            <div class="container " data-aos="fade-up">
+    
+            
+                <!--right container-->
+                <div class="row ">
+                  <div class="col-lg-6 pt-4 pt-lg-0 content " data-aos="fade-up" data-aos-delay="100">
+                    <div class="section-title">
+                  
+                      <span class="pre-title uppercase"> pre title | pre title</span>
+                      <h1 class="content-title-2 pt-4 "><span class="underline me-2"></span><%=project.title%></h1>
+                      <h4 class="project-date"><%=new Date (project.createdAt).toDateString()%></h4>
+                     
+                    </div>
+                  </div>
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class ="image-container" >
+                    <img  class="img-fluid" src="/<%=project.imageUrl%>" alt="<%=project.title%>" >
+                    </div>
+                </div>
+                <!-- / right container-->
+                
+                </div>
+
+    
+            </div>
+        </section><!-- End who we are Section -->
+            <div class=" mt-4  pl-2 d-flex flex-column justify-content-start container" data-aos="fade-up" data-aos-delay="100">
+                <p class="letter-spacing-normal">
+                    <%= project.description %>
+                </p>
+                
+            </div>
+        
+    </main>
+    <!-- End project details Section -->
+    <%-include('../includes/end.ejs') %>
+            <script src="/js/non-home.js"></script>

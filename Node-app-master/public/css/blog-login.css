@@ -1,0 +1,63 @@
+.login {
+    margin-top: 1rem;
+    height: calc(85vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img-container {
+    background: linear-gradient(rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+        url("../assets/Eni_SpA.svg.png");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.loginTitle {
+    font-size: 50px;
+    font-weight: 900;
+    color: #444;
+}
+
+.loginForm {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm>label {
+    margin: 10px 0;
+}
+
+.loginInput {
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.loginInput:focus {
+    outline: none !important;
+    border: 1px solid #fed300;
+    box-shadow: 0 0 10px #fed300;
+}
+
+.loginButton {
+    cursor: pointer;
+    background-color: #fde36f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.loginButton:hover,
+.loginButton:active {
+    background-color: #fdd300;
+}

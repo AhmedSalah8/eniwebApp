@@ -1,0 +1,87 @@
+<%-include('../includes/head.ejs')%>
+<link rel="stylesheet" href="/css/edit-project.css">
+    </head>
+    <%-include('../includes/navigation.ejs')%>
+    <div style="margin-top:100px;"></div>
+
+            <div class="container contact mb-5">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact-info">
+                            <h2><% if (editing) { %>Updating Project!<% } else { %>New Project!<% } %> </h2>
+                            <h4><i class="bi bi-file-text"></i></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="contact-form">
+                                    <% if (errorMessage) { %>
+                                        <div style="color:red;">
+                                            <%= errorMessage %>
+                                        </div>
+                                        <% } %>
+                    <form action="/admin/<% if (editing) { %>edit-project<% } else { %>add-project<% } %>" method="POST" enctype="multipart/form-data" class="mt-2">
+                            <div class="form-group mb-2">
+                                <label class="control-label col-sm-2" for="title">Title:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="title" id="title" value="<% if (editing || hasError){ %><%=project.title%><% }%>"
+                                        class="<%=validationErrors.find(e=>e.param==='title') ? 'invalid' : '' %> form-control">
+                                </div>
+                            </div>
+                            <% if(!editing) { %>
+                            <div class="form-group mb-2">
+                                <label for="category" class="control-label col-sm-2">Category:</label>
+                                <div class="col-sm-10">
+                                    <select name="category" id="category" class="form-select mt-1" onchange="cityCheck(this);">
+                                        <option value="sustainability">Sustainability</option>
+                                        <option value="business">Business</option>
+                                        <option value="Port Said">Port Said</option>
+                                        <option value="Damietta">Damietta</option>
+                                        <option value="Western Desert">Western Desert</option>
+                                        <option value="Cairo">Cairo</option>
+                                        <option value="South Sinai">South Sinai</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 area" style="display:none;">
+                                <label class="control-label col-sm-2" for="area">Area:</label>
+                                <div class="col-sm-10">
+                                <input type="text" name="area" id="area" class="form-control">
+                                </div>
+                            </div>
+                            <% } %>
+                            <div class="form-group mb-2">
+                                <label class="control-label col-sm-2" for="">Image:</label>
+                                <div class="col-sm-10">
+                                            <input type="file" name="image" id="image" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="control-label col-sm-2" for="comment">Details:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="description" id="description" rows="10"
+                                        class="<%=validationErrors.find(e=>e.param==='description') ? 'invalid' : '' %> form-control"><% if(editing || hasError){%><%=project.description%><%}%></textarea>
+                                </div>
+                            </div>
+                            <% if (editing) { %>
+                                <input type="hidden" name="projectId" value="<%= project._id%>">
+                                <% } %>
+                                    <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-warning">
+                                        <% if (editing) { %>Update Project<% } else { %>Add Project<% } %>
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div  class="bottom-spacing mb-5" ></div>
+        <% if (!editing) { %>
+            <div class="" style="margin-top:10rem;"></div>
+        <% } %>
+    <%-include('../includes/end.ejs') %>
+            <script src="/js/admin.js"></script>
+            <script src="/js/non-home.js"></script>

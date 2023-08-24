@@ -1,0 +1,69 @@
+<%-include('../includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/contact.css">
+    </head>
+<%-include('../includes/navigation.ejs')%>
+
+        <!-- MAIN -->
+        <main class="position-relative mb-5">
+            <div class="container margin-top-7 ">
+                <section id="shadow" class="  mx-auto pt-6">
+        
+                    <!-- HEADER -->
+                    <header class="mb-5 text-center">
+                        <h1 class="fw-bold yellow-color">Contact</h1>
+                        <p class="text-secondary">Do you have something to tell us?
+                        </p>
+                    </header>
+                            <% if (errorMessage) { %>
+                                <div class="mb-2" style="color:red;">
+                                    <%= errorMessage %>
+                                </div>
+                                <% } %>
+                    <!-- /HEADER -->
+                    <!-- form -->
+                        <form method="POST" action="/contact" class="normal-sign" novalidate>
+                        <div class="row g-3 name-inputs">
+                            <div class="col">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name="name" id="name" class="input form-control" placeholder="Name" aria-label="Name" value="<% if (hasError) {%><%=message.name%><%}%>">
+                            </div>
+                            <div class="mb-3 col">
+                                <label for="sureName" class="form-label">Surname</label>
+                                <input type="text" name="surname" id="surname" class="input form-control" placeholder="Surname" aria-label="Surname" value="<% if (hasError) {%><%=message.surname%><%}%>">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                Email address
+                            </label>
+                            <input type="email" name="email" id="email" class="input form-control" placeholder="Enter your email address" value="<% if (hasError) {%><%=message.email%><%}%>">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" name="Subject" id="subject" class="form-control input" placeholder="Subject" aria-label="subjcet" value="<% if (hasError) {%><%=message.subject%><%}%>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Message</label>
+                            <textarea name="description" id="description"  rows="4" class="form-control input"><% if (hasError) {%><%=message.desc%><%}%></textarea>
+                        </div>
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        <div class="text-center mt-1 ">
+                            <button class="button" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+                                </svg>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <!-- form -->
+                </section>
+            </div>
+        </main>
+        <!-- /MAIN -->
+        
+
+        <%-include('../includes/end.ejs') %>
+        <script src="/js/non-home.js"></script>
